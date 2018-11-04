@@ -30,11 +30,12 @@ class Question extends Component {
       <div className = "question-card"> 
         <h4> category: {this.props.category} 
       </h4>
+        
+        <h3> {this.props.vanilla}
+        </h3>
         <p>
         rewrite this line of javascript using jQuery 
         </p>
-        <h3> {this.props.vanilla}
-        </h3>
         <form className = "input-form" id="answer-form" onSubmit={this.checkAnswer}>
           <input className = "answer-input" placeholder="type-answer-here" onChange={this.handleChange} />
           <div>

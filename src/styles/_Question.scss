@@ -1,23 +1,23 @@
 .question-card {
-  border: solid 1px black;
+  // border: solid 1px black;
+  opacity: .9;
   height: 500px;
-  width: 600px;
+  // width: 400px;
   padding-bottom: 0;
+  padding: 10px;
   display: grid;
-  grid-template-rows: 100px 3fr 4fr 1fr; 
+  grid-template-rows: 30px 3fr 4fr 1fr; 
+  grid-template-columns: 550px;
   background-color: $light-pink;
   h3 {
     font-size: 2rem;
     word-wrap: break-word;
-    width: 100%;
+    // width: 100%;
     text-align: center;
   }
 }
 
-.questionContainer {
-  padding: 20px;
-  @include display-flex(column);
-}
+
 
 form {
  @include display-flex(column);

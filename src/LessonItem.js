@@ -24,15 +24,15 @@ class LessonItem extends Component {
   render() {
     if (this.state.showLessonInfo) {
       return (
-      <div> 
-      <h2> {this.props.lessonTitle} </h2>
-      <p> {this.props.lessonInfo} </p>
+      <div className = "list-item"> 
+        <h2> {this.props.lessonTitle} </h2>
+        <p> {this.props.lessonInfo} </p>
         <button onClick={this.showLessonInfo}> show less </button>
         </div>
         )
     } else {
       return  (
-      <div> 
+      <div className = "list-item"> 
       <h2> {this.props.lessonTitle} </h2>
         <button onClick={this.showLessonInfo}> show more </button>
       </div>

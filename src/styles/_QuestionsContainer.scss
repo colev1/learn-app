@@ -1,0 +1,5 @@
+.question-container {
+  padding: 20px;
+  @include display-flex(column);
+}
+

@@ -15,7 +15,7 @@ class QuestionsContainer extends Component {
       }
     })
     return (
-      <div className = "questionContainer"> 
+      <div className = "question-container"> 
         <h1> practice your jQuery </h1>
         <p> {questions} </p>
       </div>

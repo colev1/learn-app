@@ -2,8 +2,10 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
   font: $font;
-  background-color: $light-tan;
+  // background-color: $light-tan;
   height: 100vh;
+  background-image: url('../corkboard.jpg');
+  background-size: cover;
 }
 
 
