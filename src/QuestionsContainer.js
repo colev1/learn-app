@@ -16,9 +16,9 @@ class QuestionsContainer extends Component {
     })
     return (
       <div className = "questionContainer"> 
-      <h1> practice your jQuery </h1>
-      <p> {questions} </p>
-      </div >
+        <h1> practice your jQuery </h1>
+        <p> {questions} </p>
+      </div>
       )
   }
 }

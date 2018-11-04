@@ -2,11 +2,16 @@
   border: solid 1px black;
   height: 500px;
   width: 600px;
-  @include display-flex(column);
-  input {
-    font-size: 2rem;
-  }
+  padding-bottom: 0;
+  display: grid;
+  grid-template-rows: 100px 3fr 4fr 1fr; 
   background-color: $light-pink;
+  h3 {
+    font-size: 2rem;
+    word-wrap: break-word;
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .questionContainer {
@@ -14,6 +19,20 @@
   @include display-flex(column);
 }
 
-button {
-  
+form {
+ @include display-flex(column);
+  width: 100%;
+  input, button {
+    height: 50px;
+    font-size: 1.2rem;
+  }
+  input {
+    width: 400px;
+  }
+  div {
+    @include display-flex(row);
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+  }
 }
