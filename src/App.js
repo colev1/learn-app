@@ -38,7 +38,7 @@ class App extends Component {
   
   render() {
     return (
-      <div className="App">
+      <div className="app-container">
         <Lessons lessonsData={this.state.lessonsData} />
         <QuestionsContainer questionsData = {this.state.questionsData} incrementQuestionCount={this.incrementQuestionCount} questionCount={this.state.questionCount}/>
       </div>

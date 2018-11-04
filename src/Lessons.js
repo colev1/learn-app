@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import LessonItem from './LessonItem.js';
+
 
 class Lessons extends Component {
   constructor(props) {
@@ -6,12 +8,12 @@ class Lessons extends Component {
   } 
   render() {
     let lessons = this.props.lessonsData.map(lesson => {
-      return (<li> {lesson.title} </li>);
+      return ( <LessonItem lessonTitle={lesson.title} lessonInfo={lesson.info}/> );
     });
     return (
-      <div className="jquery-rules">
+      <div className="lesson-container">
         <h1> JQUERY RULES </h1>
-        <ul> {lessons} </ul>
+        <div> {lessons} </div>
       </div>)
   }
 }

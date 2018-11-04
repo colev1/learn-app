@@ -1,7 +1,19 @@
 .question-card {
   border: solid 1px black;
+  height: 500px;
+  width: 600px;
   @include display-flex(column);
   input {
     font-size: 2rem;
   }
+  background-color: $light-pink;
+}
+
+.questionContainer {
+  padding: 20px;
+  @include display-flex(column);
+}
+
+button {
+  
 }
