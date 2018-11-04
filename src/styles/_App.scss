@@ -1,7 +1,9 @@
-.App {
+.app-container {
   display: grid;
   grid-template-columns: 1fr 2fr;
   font: $font;
+  background-color: $light-tan;
+  height: 100vh;
 }
 
 
