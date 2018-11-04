@@ -9,7 +9,7 @@ class Lessons extends Component {
       return (<li> {lesson.title} </li>);
     });
     return (
-      <div>
+      <div className="jquery-rules">
         <h1> JQUERY RULES </h1>
         <ul> {lessons} </ul>
       </div>)
