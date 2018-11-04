@@ -26,7 +26,11 @@ class App extends Component {
 
     incrementQuestionCount = (event) => {
       event.preventDefault();
-      const count = this.state.questionCount + 1;
+      if (this.state.questionCount < 30 ) {
+       var count = this.state.questionCount + 1 
+      } else {
+        var count = 1;
+      }
       this.setState({
         questionCount: count
       })

@@ -8,7 +8,11 @@ class Lessons extends Component {
     let lessons = this.props.lessonsData.map(lesson => {
       return (<li> {lesson.title} </li>);
     });
-    return (<ul> {lessons} </ul>)
+    return (
+      <div>
+        <h1> JQUERY RULES </h1>
+        <ul> {lessons} </ul>
+      </div>)
   }
 }
 

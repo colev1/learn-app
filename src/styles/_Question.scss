@@ -1,0 +1,7 @@
+.question-card {
+  border: solid 1px black;
+  @include display-flex(column);
+  input {
+    font-size: 2rem;
+  }
+}
