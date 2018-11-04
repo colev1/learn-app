@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import LessonItem from './LessonItem.js';
+import image from './images/jquery.gif';
 
 
 class Lessons extends Component {
@@ -12,8 +13,7 @@ class Lessons extends Component {
     });
     return (
       <div className="lesson-container">
-        <h1> JQUERY RULES </h1>
-        <div> {lessons} </div>
+        {lessons} 
       </div>)
   }
 }
