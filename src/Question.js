@@ -67,7 +67,7 @@ class Question extends Component {
   
     return (
       <div className = "question-card"> 
-      <i class="far fa-star"> </i>
+      <i class="far fa-star" > </i>
         <h4> category: {this.props.category} 
         </h4>
         <h3> {this.props.vanilla}

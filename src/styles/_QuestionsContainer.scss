@@ -12,4 +12,45 @@
 
 .stored-question {
   color: red;
+  width: 10px;
 }
+
+.stored-questions-container {
+  position: absolute;
+  top: 6%;
+  right: 0%;
+  width: 700px;
+  height: 300px;
+  overflow-x: scroll;
+  background-color: grey;
+  border: solid black 1px;
+  margin: 0;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: row;
+  .question-card {
+    width: 200px;
+    font-size: 60%;
+    margin: 10px;
+    grid-template-rows: 80px 80px 1fr 50px; 
+    grid-template-columns: 200px;
+    h3 {
+    font-size: 1rem;
+    }
+    input, button {
+    height: 40px;
+    font-size: .4rem;
+    }
+    input {
+      width: 80%;
+    }
+  }
+}
+
+.stored-questions-header {
+  position: absolute;
+  top: 0%;
+  z-index: 4;
+}
+
+

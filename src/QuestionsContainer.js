@@ -18,12 +18,17 @@ class QuestionsContainer extends Component {
     let storedIdeas = [];
     for (var i=1; i<localStorage.length+1; i++) {
     var currentIdea = JSON.parse(localStorage.getItem(`"${[i]}"`));
-    if (currentIdea.correct === false) {
+    // if (currentIdea.correct === false) {
       storedIdeas.push(currentIdea);
-      }
+      // }
+      console.log(storedIdeas)
+
     }
     this.setState({
       showStoredIdeas: !this.state.showStoredIdeas
+    })
+    this.setState({
+      storedIdeas: storedIdeas
     })
   }
 
@@ -55,11 +60,17 @@ class QuestionsContainer extends Component {
       )
       } else {
         return (
-      <div className = "question-container"> 
+      <div className = "question-container">
+
       <div>
+        <h1 className= "stored-questions-header"> saved questions </h1> 
         <button className = "save-button" onClick={this.loadSavedQuestions} > hide saved questions </button>
-        </div>
-        <ul> {correctQuestions} </ul>
+      </div>
+
+        <ul className="stored-questions-container"> 
+
+        {correctQuestions} </ul>
+        <p> {questions} </p>
       </div>
       )
       }
