@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
+import StoredQuestion from './StoredQuestion.js'
 import Question from './Question.js';
-
 
 class QuestionsContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-    storedIdeas: []
+    storedIdeas: [],
+    showStoredIdeas: false
     }
   }
 
@@ -21,7 +22,9 @@ class QuestionsContainer extends Component {
       storedIdeas.push(currentIdea);
       }
     }
-    console.log(storedIdeas)
+    this.setState({
+      showStoredIdeas: !this.state.showStoredIdeas
+    })
   }
 
   storeIdeas = (idea) => {
@@ -38,16 +41,28 @@ class QuestionsContainer extends Component {
         );
       }
     });
-    let correctQuestions = this.props.questions
-    return (
+      let correctQuestions = this.state.storedIdeas.map((question) => {
+            return (<Question className="stored-question" category={question.category} jquery={question.jquery} vanilla={question.vanilla} id={question.id} incrementQuestionCount={this.props.incrementQuestionCount} storeIdeas={this.storeIdeas}/>);
+          });
+      if (this.state.showStoredIdeas === false) {
+        return (
       <div className = "question-container"> 
       <div>
         <button className = "save-button" onClick={this.loadSavedQuestions} > show saved questions </button>
-          
         </div>
         <p> {questions} </p>
       </div>
       )
+      } else {
+        return (
+      <div className = "question-container"> 
+      <div>
+        <button className = "save-button" onClick={this.loadSavedQuestions} > hide saved questions </button>
+        </div>
+        <ul> {correctQuestions} </ul>
+      </div>
+      )
+      }
   }
 }
 
