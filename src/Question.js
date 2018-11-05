@@ -13,12 +13,20 @@ class Question extends Component {
 
   checkAnswer = (event) => {
     event.preventDefault();
-    (this.state.userInput === this.props.jquery) ? 
+    if(typeof(this.props.jquery) === 'string') {
+      (this.state.userInput === this.props.jquery) ? 
        this.setState({
         correct: true
       }) : this.setState({
       correct: false
     });
+    } else {
+      (this.props.jquery.includes(this.state.userInput)) ? this.setState({
+        correct: true
+      }) : this.setState({
+      correct: false
+    });
+      }
       setTimeout(() => {
         this.sendToStorage(this.props);
         this.props.incrementQuestionCount();
@@ -36,7 +44,9 @@ class Question extends Component {
       correct: this.state.correct
     }
     localStorage.setItem(`"${objectId}"`, JSON.stringify(obj));
-  }
+    this.props.storeIdeas(obj);
+}
+  
 
   handleChange = (event) => {
     this.setState({
