@@ -11,19 +11,42 @@ class QuestionsContainer extends Component {
     }
   }
 
-
+  componentDidMount() {
+    let storedIdeas = [];
+    for (var i=1; i<30; i++) {
+    if (localStorage.getItem(`"${[i]}"`)) {
+    var currentIdea = JSON.parse(localStorage.getItem(`"${[i]}"`));
+      storedIdeas.push(currentIdea);
+    }
+    this.setState({
+      storedIdeas: storedIdeas
+    })
+  }
+  }
 
   loadSavedQuestions = (event) => {
     event.preventDefault();
     let storedIdeas = [];
     for (var i=1; i<localStorage.length+1; i++) {
     var currentIdea = JSON.parse(localStorage.getItem(`"${[i]}"`));
-    if (currentIdea.correct === false) {
       storedIdeas.push(currentIdea);
-      }
     }
+    console.log(storedIdeas)
     this.setState({
       showStoredIdeas: !this.state.showStoredIdeas
+    });
+  }
+
+  clearSavedQuestions = (event) => {
+    event.preventDefault();
+    for (var i=0; i<30; i++) {
+          // var currentIdea = JSON.parse(localStorage.getItem(`"${[i]}"`));
+          let currentCard = JSON.stringify(i);
+          console.log(currentCard)
+          localStorage.removeItem(`"${currentCard}"`);
+        }
+    this.setState({
+      storedIdeas: []
     })
   }
 
@@ -37,13 +60,17 @@ class QuestionsContainer extends Component {
     let questions = this.props.questionsData.map(question => {
       if (question.id === this.props.questionCount) {
         return (
-        <Question category={question.category} jquery={question.jquery} vanilla={question.vanilla} id={question.id} incrementQuestionCount={this.props.incrementQuestionCount} storeIdeas={this.storeIdeas}/> 
+        <Question category={question.category} savedQuestion={false} jquery={question.jquery} vanilla={question.vanilla} id={question.id} incrementQuestionCount={this.props.incrementQuestionCount} storeIdeas={this.storeIdeas}/> 
         );
       }
     });
-      let correctQuestions = this.state.storedIdeas.map((question) => {
-            return (<Question className="stored-question" category={question.category} jquery={question.jquery} vanilla={question.vanilla} id={question.id} incrementQuestionCount={this.props.incrementQuestionCount} storeIdeas={this.storeIdeas}/>);
+
+    if (this.state.storedIdeas.length > 0) {
+      console.log(this.state.storedIdeas.length);
+      var correctQuestions = this.state.storedIdeas.map((question) => {
+            return (<Question className="stored-question" category={question.category} savedQuestion={true}jquery={question.jquery} vanilla={question.vanilla} id={question.id} incrementQuestionCount={this.props.incrementQuestionCount} storeIdeas={this.storeIdeas}/>);
           });
+    }
       if (this.state.showStoredIdeas === false) {
         return (
       <div className = "question-container"> 
@@ -55,11 +82,18 @@ class QuestionsContainer extends Component {
       )
       } else {
         return (
-      <div className = "question-container"> 
+      <div className = "question-container">
+
       <div>
+      <button className = "save-button close-button" onClick={this.clearSavedQuestions} > clear saved questions </button>
+        <h1 className= "stored-questions-header"> saved questions </h1> 
         <button className = "save-button" onClick={this.loadSavedQuestions} > hide saved questions </button>
-        </div>
-        <ul> {correctQuestions} </ul>
+      </div>
+
+        <ul className="stored-questions-container"> 
+
+        {correctQuestions} </ul>
+        <p> {questions} </p>
       </div>
       )
       }
