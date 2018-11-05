@@ -1,19 +1,24 @@
 .question-card {
   // border: solid 1px black;
-  opacity: .9;
+  // opacity: .95;
+  text-align: center;
   height: 500px;
   // width: 400px;
   padding-bottom: 0;
   padding: 10px;
   display: grid;
-  grid-template-rows: 30px 3fr 4fr 1fr; 
+  grid-template-rows: 3fr 200px 1fr 1fr; 
   grid-template-columns: 550px;
-  background-color: $light-pink;
+  // background-color: $light-pink;
+    // background-color: yellow;
+
+ @include yellow-background;
+ transform: rotate(2deg);
+  transform: skew(-1deg,1deg);
   h3 {
-    font-size: 2rem;
+    font-size: 1.6rem;
     word-wrap: break-word;
     // width: 100%;
-    text-align: center;
   }
 }
 
@@ -34,5 +39,8 @@ form {
     justify-content: space-between;
     width: 100%;
     margin-top: 20px;
+  }
+  button:hover {
+    cursor: pointer;
   }
 }
