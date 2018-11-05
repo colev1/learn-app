@@ -5,7 +5,9 @@ class Question extends Component {
     super(props);
     this.state = {
       correct: '',
-      userInput: ''
+      userInput: '',
+      id: this.props.id,
+      vanilla: this.props.vanilla
     }
   }
 
@@ -18,8 +20,22 @@ class Question extends Component {
       correct: false
     });
       setTimeout(() => {
-        this.props.incrementQuestionCount(event);
-      },4000)
+        this.sendToStorage(this.props);
+        this.props.incrementQuestionCount();
+      },1000)
+  }
+
+  sendToStorage = (object) => {
+    const objectId = JSON.stringify(object.id);
+    console.log(this.state.correct);
+    const obj = {
+      id: object.id,
+      category: object.category,
+      vanilla: object.vanilla,
+      jquery: object.jquery,
+      correct: this.state.correct
+    }
+    localStorage.setItem(`"${objectId}"`, JSON.stringify(obj));
   }
 
   handleChange = (event) => {
@@ -41,9 +57,9 @@ class Question extends Component {
   
     return (
       <div className = "question-card"> 
+      <i class="far fa-star"> </i>
         <h4> category: {this.props.category} 
         </h4>
-        
         <h3> {this.props.vanilla}
         </h3>
         <p>

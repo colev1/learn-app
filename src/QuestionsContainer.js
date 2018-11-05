@@ -6,6 +6,13 @@ class QuestionsContainer extends Component {
   constructor(props) {
     super(props);
   } 
+
+  loadSavedQuestions = (event) => {
+    event.preventDefault();
+    let items = localStorage.getItem("3");
+    console.log(items)
+  }
+
   render() {
     let questions = this.props.questionsData.map(question => {
       if (question.id === this.props.questionCount) {
@@ -13,10 +20,13 @@ class QuestionsContainer extends Component {
         <Question category={question.category} jquery={question.jquery} vanilla={question.vanilla} id={question.id} incrementQuestionCount={this.props.incrementQuestionCount} /> 
         );
       }
-    })
+    });
     return (
       <div className = "question-container"> 
-        <h1 className="questions-header"> practice your jQuery </h1>
+      <div>
+        <button className = "save-button" onClick={this.loadSavedQuestions} > show saved questions </button>
+          
+        </div>
         <p> {questions} </p>
       </div>
       )

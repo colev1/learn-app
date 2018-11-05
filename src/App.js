@@ -24,8 +24,7 @@ class App extends Component {
       .catch(error => console.log(error));
     }
 
-    incrementQuestionCount = (event) => {
-      event.preventDefault();
+    incrementQuestionCount = () => {
       if (this.state.questionCount < 30 ) {
        var count = this.state.questionCount + 1 
       } else {
