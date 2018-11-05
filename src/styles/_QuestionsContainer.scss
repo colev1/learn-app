@@ -3,3 +3,13 @@
   @include display-flex(column);
 }
 
+.questions-header {
+  font-size: 70px;
+  height: 200px;
+  width: 300px;
+  // color: #FAAACA;
+}
+
+.stored-question {
+  color: red;
+}

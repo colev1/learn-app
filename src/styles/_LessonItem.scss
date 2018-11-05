@@ -1,7 +1,5 @@
 .list-item {
-  background-color: $light-pink;
-  opacity: .9;
-  // width: 100%;
+   @include yellow-background;
   @include display-flex(column);
   align-items: flex-start;
   padding-left: 20px;
