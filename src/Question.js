@@ -28,14 +28,14 @@ class Question extends Component {
     });
       }
       setTimeout(() => {
-        this.sendToStorage(this.props);
+        // this.sendToStorage(this.props);
         this.props.incrementQuestionCount();
       },1000)
   }
 
-  sendToStorage = (object) => {
+  sendToStorage = () => {
+    let object = this.props;
     const objectId = JSON.stringify(object.id);
-    console.log(this.state.correct);
     const obj = {
       id: object.id,
       category: object.category,
@@ -45,6 +45,7 @@ class Question extends Component {
     }
     localStorage.setItem(`"${objectId}"`, JSON.stringify(obj));
     this.props.storeIdeas(obj);
+    this.props.incrementQuestionCount();
 }
   
 
@@ -67,7 +68,7 @@ class Question extends Component {
   
     return (
       <div className = "question-card"> 
-      <i class="far fa-star" > </i>
+      <i class="far fa-star" onClick={this.sendToStorage}> </i>
         <h4> category: {this.props.category} 
         </h4>
         <h3> {this.props.vanilla}
