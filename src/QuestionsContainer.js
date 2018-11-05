@@ -11,15 +11,17 @@ class QuestionsContainer extends Component {
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     let storedIdeas = [];
-    for (var i=1; i<localStorage.length+1; i++) {
+    for (var i=1; i<30; i++) {
+    if (localStorage.getItem(`"${[i]}"`)) {
     var currentIdea = JSON.parse(localStorage.getItem(`"${[i]}"`));
       storedIdeas.push(currentIdea);
     }
     this.setState({
       storedIdeas: storedIdeas
     })
+  }
   }
 
   loadSavedQuestions = (event) => {
@@ -37,9 +39,11 @@ class QuestionsContainer extends Component {
 
   clearSavedQuestions = (event) => {
     event.preventDefault();
-    for (var i=1; i<localStorage.length+1; i++) {
+    for (var i=0; i<30; i++) {
           // var currentIdea = JSON.parse(localStorage.getItem(`"${[i]}"`));
-          localStorage.removeItem(`"${[i]}"`)
+          let currentCard = JSON.stringify(i);
+          console.log(currentCard)
+          localStorage.removeItem(`"${currentCard}"`);
         }
     this.setState({
       storedIdeas: []

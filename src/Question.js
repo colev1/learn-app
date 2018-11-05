@@ -33,8 +33,9 @@ class Question extends Component {
       },1000)
   }
 
-  deleteStoredIdea = () => {
-
+  deleteStoredQuestion = (event) => {
+    event.preventDefault();
+    
   }
 
   sendToStorage = () => {
@@ -92,13 +93,13 @@ class Question extends Component {
           } else {
             return (
             <div className = "question-card stored-card"> 
-            <i class="fas fa-trash-alt" onClick={this.sendToStorage}> </i>
+            <i class="fas fa-trash-alt" onClick={this.deleteStoredQuestion}> </i>
               <h4> category: {this.props.category} 
               </h4>
               <h3> {this.props.vanilla}
               </h3>
              
-              <form className = "input-form" id="answer-form" onSubmit={this.deleteStoredIdea}>
+              <form className = "input-form" id="answer-form">
                 <div>
                 <button className = "skip-ans-btn" onClick={this.props.practiceStoredQuestion}> practice question </button>
                 </div>
