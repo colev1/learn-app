@@ -16,7 +16,15 @@ $light-tan: #EDD5A9;
 
 //images
 @mixin yellow-background {
-  background: linear-gradient(top, rgba(0,0,0,.05), rgba(0,0,0,.25));
-  background-color: #FFFD75;
+  // background: linear-gradient(top, rgba(0,0,0,.05), rgba(0,0,0,.25));
+  // background-color: #FFFD75;
+    border: dotted 4px black;
+   background-color: white;
   box-shadow: 5px 5px 10px -2px rgba(33,33,33,.3);
+}
+
+@mixin app-background {
+  background-color: #FFE53B;
+background-image: linear-gradient(147deg, #FFE53B 0%, #fd3838 74%);
+min-height: 100vh;
 }

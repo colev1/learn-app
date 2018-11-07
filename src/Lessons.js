@@ -13,6 +13,7 @@ class Lessons extends Component {
     });
     return (
       <div className="lesson-container">
+      <h1> jquery rules </h1>
         {lessons} 
       </div>)
   }
