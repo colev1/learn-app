@@ -34,6 +34,7 @@ class App extends Component {
       this.setState({
         questionCount: count
       })
+      console.log(this.state.questionCount)
     }
   
   render() {

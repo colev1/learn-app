@@ -1,15 +1,5 @@
 .question-container {
-  padding: 20px;
-  // padding-top: 400px;
-  @include display-flex(column);
-  justify-content: center;
-}
-
-.questions-header {
-  font-size: 70px;
-  height: 200px;
-  width: 300px;
-  // color: #FAAACA;
+  min-width: 800px;
 }
 
 .stored-question {
@@ -18,24 +8,22 @@
 }
 
 .stored-questions-container {
-  position: absolute;
-  top: 6%;
-  right: 0%;
-  width: 60%;
-  height: 350px;
-  overflow-x: scroll;
-  // background-color: white;
-  margin: 0;
-  margin-bottom: 40px;
   display: flex;
   flex-direction: row;
+  height: 350px;
+  margin-bottom: 80px;
+  margin: 0;
+  overflow-x: scroll;
+  position: absolute;
+  right: 0%;
+  top: 6%;
+  width: 60%;
   .question-card {
-    width: 220px;
     font-size: 60%;
-    margin: 10px;
-    // height: 200px;
-    grid-template-rows: 80px 80px 1fr 50px; 
     grid-template-columns: 200px;
+    grid-template-rows: 80px 80px 1fr 50px; 
+    margin: 10px;
+    width: 220px;
     h3 {
     font-size: 1rem;
     }
@@ -50,7 +38,6 @@
 }
 
 .stored-questions-header {
-  // background-color: lightgrey;
   display: flex;
   height: 100px;
   justify-content: center;
@@ -64,17 +51,17 @@
 }
 
 .save-button {
-  transition-property: all;
-  transition-duration: 0.4s;
-  transition-timing-function: ease-out;
   background: whitesmoke;
-  border: 4px solid #fff;
   border-radius: 1em;
-  padding: 2px;
+  border: 4px solid #fff;
   color: #222;
   cursor: pointer;
-  position: absolute;
   font-size: 20px;
+  padding: 2px;
+  position: absolute;
+  transition-duration: 0.4s;
+  transition-property: all;
+  transition-timing-function: ease-out;
   &:hover {
     background: green;
     color: #fff;

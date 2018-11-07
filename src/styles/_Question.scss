@@ -1,19 +1,13 @@
 .question-card {
   text-align: center;
-  width: 750px;
+  width: 50%;
   padding-bottom: 0;
   padding: 10px;
   display: grid;
   grid-template-rows: 60px 80px 1fr 100px; 
-  // grid-template-columns: 550px;
-  // background-color: $light-pink;
-    // background-color: yellow;
-    @include slider;
-
-
- @include yellow-background;
- transform: rotate(2deg);
-  transform: skew(-1deg,1deg);
+  @include slider;
+  @include yellow-background;
+  transform: rotate(.1deg);
   h3 {
     font-size: 1.6rem;
     word-wrap: break-word;
@@ -23,12 +17,16 @@
   }
 }
 
+.displayed-card {
+  position: absolute;
+  bottom: 10%;
+  right: 6%;
+}
+
 .stored-card {
   grid-template-rows: 200px 1fr 200px; 
   padding-top: 40px
 }
-
-
 
 form {
  @include display-flex(column);

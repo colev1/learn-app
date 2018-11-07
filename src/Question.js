@@ -38,7 +38,7 @@ class Question extends Component {
 
   deleteStoredQuestion = (event) => {
     event.preventDefault();
-
+    console.log(this.state.id)
   }
 
   sendToStorage = () => {
@@ -53,7 +53,6 @@ class Question extends Component {
     }
     localStorage.setItem(`"${objectId}"`, JSON.stringify(obj));
     this.props.storeIdeas(obj);
-    this.props.incrementQuestionCount();
 }
   
 
@@ -75,9 +74,9 @@ class Question extends Component {
     }
     if(this.props.savedQuestion === false) {
       return (
-            <div className = "question-card"> 
-            <i class="far fa-star" > </i>
-              <h4> category: {this.props.category} 
+            <div className = "question-card displayed-card"> 
+{/*            <i class="far fa-star" > </i>
+*/}              <h4> category: {this.props.category} 
               </h4>
               <h3> {this.props.vanilla}
               </h3>
