@@ -51,9 +51,11 @@ class QuestionsContainer extends Component {
   }
 
   storeIdeas = (idea) => {
-    this.setState({
+    if (!this.state.storedIdeas.includes(idea)) {
+      this.setState({
       storedIdeas: [...this.state.storedIdeas, idea]
-    })
+      })
+    }
   }
 
   render() {
@@ -75,7 +77,7 @@ class QuestionsContainer extends Component {
         return (
       <div className = "question-container"> 
       <div>
-        <button className = "save-button" onClick={this.loadSavedQuestions} > show saved questions </button>
+        <button className = "save-button" onClick={this.loadSavedQuestions} > show incorrect questions </button>
         </div>
         <p> {questions} </p>
       </div>
@@ -85,9 +87,9 @@ class QuestionsContainer extends Component {
       <div className = "question-container">
 
       <div>
-      <button className = "save-button close-button" onClick={this.clearSavedQuestions} > clear saved questions </button>
-        <h1 className= "stored-questions-header"> saved questions </h1> 
-        <button className = "save-button" onClick={this.loadSavedQuestions} > hide saved questions </button>
+      <button className = "save-button close-button" onClick={this.clearSavedQuestions} > clear incorrect questions </button>
+        <h1 className= "stored-questions-header"> incorrect questions </h1> 
+        <button className = "save-button" onClick={this.loadSavedQuestions} > hide incorrect questions </button>
       </div>
 
         <ul className="stored-questions-container"> 

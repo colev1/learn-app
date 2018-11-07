@@ -9,7 +9,7 @@ class App extends Component {
     this.state = {
       lessonsData: [],
       questionsData: [],
-      questionCount: 1
+      questionCount: Math.floor(Math.random() * 30) + 1
     }
   }
     componentDidMount = () => {
@@ -25,6 +25,7 @@ class App extends Component {
     }
 
     incrementQuestionCount = () => {
+
       if (this.state.questionCount < 30 ) {
        var count = this.state.questionCount + 1 
       } else {

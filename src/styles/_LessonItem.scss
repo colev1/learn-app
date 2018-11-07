@@ -6,4 +6,7 @@
   padding: 10px;
   // min-height: 300px;
   margin: 20px;
+  &:hover {
+    cursor: pointer;
+  }
 }

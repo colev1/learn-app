@@ -14,7 +14,8 @@ class Question extends Component {
   checkAnswer = (event) => {
     event.preventDefault();
     if(typeof(this.props.jquery) === 'string') {
-      (this.state.userInput === this.props.jquery) ? 
+      let userInput = this.state.userInput.replace(/"/g,"\'").replace(";", "");
+      (userInput === this.props.jquery) ? 
        this.setState({
         correct: true
       }) : this.setState({
@@ -28,14 +29,16 @@ class Question extends Component {
     });
       }
       setTimeout(() => {
-        // this.sendToStorage(this.props);
+        if(this.state.correct === false) {
+          this.sendToStorage(this.props);
+        }
         this.props.incrementQuestionCount();
       },1000)
   }
 
   deleteStoredQuestion = (event) => {
     event.preventDefault();
-    
+
   }
 
   sendToStorage = () => {
@@ -73,7 +76,7 @@ class Question extends Component {
     if(this.props.savedQuestion === false) {
       return (
             <div className = "question-card"> 
-            <i class="far fa-star" onClick={this.sendToStorage}> </i>
+            <i class="far fa-star" > </i>
               <h4> category: {this.props.category} 
               </h4>
               <h3> {this.props.vanilla}

@@ -2,12 +2,14 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
   font: $font;
+  // overflow-y: scroll;
   // background-color: $light-tan;
-  height: 100vh;
+  // height: 100vh;
   // background-color: blue;
-  background-image: url('../styles/cork-board-background.png');
-  background-size: cover;
-  color: #3B1408;
+  // background-image: url('../styles/cork-board-background.png');
+  // background-size: cover;
+  // color: #3B1408;
+  @include app-background;
 }
 
 

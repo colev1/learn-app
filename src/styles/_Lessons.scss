@@ -1,19 +1,16 @@
 .lesson-container {
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: space-around;
-  // li {
-  //   list-style: none;
-  // }
   width: 100%;
   padding: 30px;
-  // background-color: $light-pink;
+  // background-color: rgba(226, 22, 118, 0.3);
+  // opacity: .9;
   overflow-y: scroll;
-  
+  h1 {
+    text-align: center;
+  }
+  .list-item:hover {
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+  }
 }
 
-img {
-  height: 100px;
-  width: 100px;
-}
 
