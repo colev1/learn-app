@@ -15,14 +15,14 @@ class QuestionsContainer extends Component {
     let storedIdeas = [];
     for (var i=1; i<30; i++) {
     if (localStorage.getItem(`"${[i]}"`)) {
-    var currentIdea = JSON.parse(localStorage.getItem(`"${[i]}"`));
+      var currentIdea = JSON.parse(localStorage.getItem(`"${[i]}"`));
       storedIdeas.push(currentIdea);
     }
     this.setState({
       storedIdeas: storedIdeas
     })
   }
-  }
+}
 
   loadSavedQuestions = (event) => {
     event.preventDefault();
@@ -38,7 +38,7 @@ class QuestionsContainer extends Component {
 
   clearSavedQuestions = (event) => {
     event.preventDefault();
-    for (var i=0; i<30; i++) {
+    for (var i=0; i<31; i++) {
           let currentCard = JSON.stringify(i);
           localStorage.removeItem(`"${currentCard}"`);
         }
@@ -55,6 +55,24 @@ class QuestionsContainer extends Component {
     }
   }
 
+  updateState = (removedObj) => {
+    let currentStoredIdeas = this.state.storedIdeas;
+    let index = currentStoredIdeas.indexOf(removedObj);
+    console.log(currentStoredIdeas);
+    console.log(removedObj)
+    console.log(index);
+    if(index != -1) {
+      currentStoredIdeas.splice(index, 1)
+    }
+
+
+    this.setState({
+      storedIdeas: currentStoredIdeas
+      })
+  }
+
+
+
   render() {
     let questions = this.props.questionsData.map(question => {
       if (question.id === this.props.questionCount) {
@@ -66,7 +84,7 @@ class QuestionsContainer extends Component {
 
     if (this.state.storedIdeas.length > 0) {
       var correctQuestions = this.state.storedIdeas.map((question) => {
-            return (<Question className="stored-question" category={question.category} savedQuestion={true}jquery={question.jquery} vanilla={question.vanilla} id={question.id} incrementQuestionCount={this.props.incrementQuestionCount} storeIdeas={this.storeIdeas}/>);
+            return (<Question className="stored-question" category={question.category} savedQuestion={true}jquery={question.jquery} vanilla={question.vanilla} id={question.id} incrementQuestionCount={this.props.incrementQuestionCount} storeIdeas={this.storeIdeas} updateState={this.updateState}/>);
           });
     }
       if (this.state.showStoredIdeas === false) {
