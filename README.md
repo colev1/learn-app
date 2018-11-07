@@ -34,9 +34,8 @@ Copy and paste the following lines below into your terminal:
 ![Image of Wireframe](wireframe.png)
 
 ##### Our App:
-![Another image of app](app1.png)
+![Image of app](image1.png)
 
-![Image of app](app2.png)
 
 
 
