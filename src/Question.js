@@ -36,11 +36,6 @@ class Question extends Component {
       },1000)
   }
 
-  deleteStoredQuestion = (event) => {
-    event.preventDefault();
-    console.log(this.state.id)
-  }
-
   sendToStorage = () => {
     let object = this.props;
     const objectId = JSON.stringify(object.id);
@@ -67,51 +62,47 @@ class Question extends Component {
     let responseToAnswer;
     if (isCorrect) {
       responseToAnswer = "that is correct!"
-    } else  if (isCorrect === false){
+    } else if (isCorrect === false) {
       responseToAnswer = "that is incorrect!";
     } else {
       responseToAnswer = 'translate this line of code from vanilla JS to jquery:'
     }
     if(this.props.savedQuestion === false) {
       return (
-            <div className = "question-card displayed-card"> 
-{/*            <i class="far fa-star" > </i>
-*/}              <h4> category: {this.props.category} 
-              </h4>
-              <h3> {this.props.vanilla}
-              </h3>
-              <p>
-              {responseToAnswer}
-              </p>
-              <form className = "input-form" id="answer-form" onSubmit={this.checkAnswer}>
-                <input className = "answer-input" placeholder="Type answer here..." onChange={this.handleChange} />
-                <div>
-                <button className = "skip-ans-btn" onClick={this.props.incrementQuestionCount}> skip question </button>
-                <button className ="submit-ans-btn"  type="submit" value="submit"> submit </button>
-                </div>
-              </form> 
-              </div>
+        <div className = "question-card displayed-card"> 
+          <h4> category: {this.props.category} 
+          </h4>
+          <h3> {this.props.vanilla}
+          </h3>
+          <p>
+          {responseToAnswer}
+          </p>
+          <form className = "input-form" id="answer-form" onSubmit={this.checkAnswer}>
+            <input className = "answer-input" placeholder="Type answer here..." onChange={this.handleChange} />
+            <div>
+            <button className = "skip-ans-btn" onClick={this.props.incrementQuestionCount}> skip question </button>
+            <button className ="submit-ans-btn"  type="submit" value="submit"> submit </button>
+            </div>
+          </form> 
+          </div>
             ) 
           } else {
             return (
             <div className = "question-card stored-card"> 
-            <i class="fas fa-trash-alt" onClick={this.deleteStoredQuestion}> </i>
               <h4> category: {this.props.category} 
               </h4>
               <h3> {this.props.vanilla}
               </h3>
-             
               <form className = "input-form" id="answer-form">
                 <div>
-                <button className = "skip-ans-btn" onClick={this.props.practiceStoredQuestion}> practice question </button>
+                  <button className = "skip-ans-btn" onClick={this.props.practiceStoredQuestion}> practice question </button>
                 </div>
               </form> 
               </div>
-            ) 
+            )
           }
-    
-  }
-}
+        }
+      }
 
 
 
