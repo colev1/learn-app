@@ -40,7 +40,6 @@ class QuestionsContainer extends Component {
   clearSavedQuestions = (event) => {
     event.preventDefault();
     for (var i=0; i<30; i++) {
-          // var currentIdea = JSON.parse(localStorage.getItem(`"${[i]}"`));
           let currentCard = JSON.stringify(i);
           console.log(currentCard)
           localStorage.removeItem(`"${currentCard}"`);

@@ -1,11 +1,10 @@
 .list-item {
-  box-sizing: border-box;
-   @include yellow-background;
+  @include yellow-background;
   @include display-flex(column);
   align-items: flex-start;
-  padding: 10px;
-  // min-height: 300px;
+  box-sizing: border-box;
   margin: 20px;
+  padding: 10px;
   &:hover {
     cursor: pointer;
   }

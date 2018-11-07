@@ -75,7 +75,7 @@ class Question extends Component {
     }
     if(this.props.savedQuestion === false) {
       return (
-            <div className = "question-card"> 
+            <div className = "question-card displayed-card"> 
             <i class="far fa-star" > </i>
               <h4> category: {this.props.category} 
               </h4>
