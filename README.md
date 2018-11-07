@@ -2,7 +2,7 @@
 
 ### Abstract:
 
-I created this app to act as a learning tool for students who are transitioning from coding in vanilla Javascript to learning JQuery. 
+I created this app to act as a learning tool for students who are transitioning from coding in vanilla Javascript to learning JQuery. The user is able to view the basic rules of jQuery, practice translating lines of code from vanilla JS to JQuery, and keep track of questions they got incorrect to come back to later. It combines ReactJS, JSX, and SCSS as well as UI/UX Design to create a functional study app.
 
 ### Installation Instructions:
 
@@ -20,20 +20,22 @@ Copy and paste the following lines below into your terminal:
 
 `npm start`
 
-### Project Background:
+### Technologies Used:
 
+#### ReactJS
 
+#### JSX
 
-### Project Goals:
+#### SASS/SCSS
 
 
 
 ### Design and Layout
 
-##### Our Wireframe:
+##### Wireframe:
 ![Image of Wireframe](wireframe.png)
 
-##### Our App:
+##### App:
 ![Image of app](image1.png)
 
 
