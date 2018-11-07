@@ -1,7 +1,5 @@
 .question-container {
-  // @include display-flex(column);
-  // justify-content: center;
-  // padding: 20px;
+  min-width: 800px;
 }
 
 .stored-question {
