@@ -26,5 +26,15 @@ $light-tan: #EDD5A9;
 @mixin app-background {
   background-color: #FFE53B;
 background-image: linear-gradient(147deg, #FFE53B 0%, #fd3838 74%);
-min-height: 100vh;
+// min-height: 100vh;
+}
+
+@mixin slider {
+    margin: auto;
+    // background: #fff;
+    box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+    // padding: 25px;
+    border-radius: 25px;
+    // height: 400px;
+    transition: all .3s;
 }

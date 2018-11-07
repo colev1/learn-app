@@ -14,7 +14,8 @@ class Question extends Component {
   checkAnswer = (event) => {
     event.preventDefault();
     if(typeof(this.props.jquery) === 'string') {
-      (this.state.userInput === this.props.jquery) ? 
+      let userInput = this.state.userInput.replace(/"/g,"\'").replace(";", "");
+      (userInput === this.props.jquery) ? 
        this.setState({
         correct: true
       }) : this.setState({
@@ -35,7 +36,7 @@ class Question extends Component {
 
   deleteStoredQuestion = (event) => {
     event.preventDefault();
-    
+
   }
 
   sendToStorage = () => {

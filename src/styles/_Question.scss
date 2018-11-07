@@ -1,12 +1,15 @@
 .question-card {
   text-align: center;
+  width: 750px;
   padding-bottom: 0;
   padding: 10px;
   display: grid;
-  grid-template-rows: 100px 100px 1fr 200px; 
-  grid-template-columns: 550px;
+  grid-template-rows: 60px 80px 1fr 100px; 
+  // grid-template-columns: 550px;
   // background-color: $light-pink;
     // background-color: yellow;
+    @include slider;
+
 
  @include yellow-background;
  transform: rotate(2deg);
@@ -85,5 +88,8 @@ form {
   &:hover {
     font-size: 32px;
   }
+}
+.fa-trash-alt:hover {
+  background: red;
 }
 
